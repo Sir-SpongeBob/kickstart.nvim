@@ -5,15 +5,20 @@
 
 vim.o.cindent = true
 -- vim.o.smartindent = true
-
 -- vim.o.tabstop = 4
 vim.o.softtabstop = 4
 vim.o.shiftwidth = 4
 vim.o.expandtab = true
-
 vim.o.linebreak = true
 vim.o.scrolloff = 15
 vim.wo.rnu = true
+
+-- Neovide config
+if vim.g.neovide then
+  vim.o.guifont="CaskaydiaCove Nerd Font:h11"
+  vim.g.neovide_refresh_rate = 165
+  vim.g.neovide_cursor_vfx_mode = "pixiedust"
+end
 
 return {
   {

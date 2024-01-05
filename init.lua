@@ -423,10 +423,19 @@ vim.keymap.set('n', '<leader>sr', require('telescope.builtin').resume, { desc = 
 vim.defer_fn(function()
   require('nvim-treesitter.configs').setup {
     -- Add languages to be installed here that you want installed for treesitter
-    ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'tsx', 'javascript', 'typescript', 'vimdoc', 'vim', 'bash' },
+    ensure_installed = { 'lua', 'python', 'vimdoc', 'vim', 'bash', 'awk', 'git_config', 'git_rebase', 'gitattributes', 'gitcommit', 'gitignore', 'html', 'ini', 'json', 'passwd', 'xml', 'yaml' },
+
+    -- Install parsers synchronously (only applied to `ensure_installed`)
+    sync_install = false,
 
     -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
-    auto_install = false,
+    auto_install = true,
+
+    -- List of parsers to ignore installing (or "all")
+    ignore_install = {},
+
+    -- https://github.com/nvim-treesitter/nvim-treesitter#adding-modules
+    modules = {},
 
     highlight = { enable = true },
     indent = { enable = true },
